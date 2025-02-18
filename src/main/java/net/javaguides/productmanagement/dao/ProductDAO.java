@@ -13,9 +13,9 @@ import net.javaguides.productmanagement.model.product;
 
 public class ProductDAO {
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3306/stockmaster?useSSL=false";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/stockmaster";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "root";
+    private String jdbcPassword = "admin";
 
     private static final String INSERT_product_SQL = "INSERT INTO product" + "  (nom, description, quantite, prix) VALUES " +
         " (?, ?, ?, ?);";
@@ -29,7 +29,7 @@ public class ProductDAO {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/stockmaster", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/stockmaster", "root", "admin");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
